@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import styled from "styled-components";
+import Adiciona from "./Adiciona";
+
+const Div = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 400px;
+  height: 200px;
+`;
+
+let preco = 255;
+
 
 function App() {
+  const [number, setNumber] = React.useState(1);
+
+  function handleClick() {
+    setNumber((number) => {
+      return number + 1;
+    })
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Div>
+      <span>Tênis nike</span>
+      <p>Preço: R$ {preco}</p>
+      <p>{number}</p>
+      <button style={{ width: '100px' }} onClick={handleClick}>Quantidade</button><br></br>
+      {number > 1 ? <span>{preco * number}</span> : null}
+      
+    </Div>
+    <Adiciona />
+    </>
   );
 }
 
