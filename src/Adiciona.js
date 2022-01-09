@@ -16,11 +16,7 @@ const Div2 = styled.div`
 let arr = [];
 
 
-function Adiciona({  }) {
-  
-  function addCar() {
-
-  }
+function Adiciona() {
 
   return (
     <Div>
