@@ -20,7 +20,6 @@ function Adiciona() {
 
   return (
     <Div>
-      <button onClick={addCar}>Adicionar ao carrinho</button>
       <Div2></Div2>
     </Div>
   )
